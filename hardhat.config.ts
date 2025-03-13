@@ -67,6 +67,9 @@ const config: HardhatUserConfig = {
             eid: EndpointId.BASESEP_V2_TESTNET,
             url: process.env.BASE_SEPOLIA_RPC_KEY || '',
             accounts,
+            oftAdapter: {
+                tokenAddress: '0xADE6404D6B49439d2F17106093184fC5B4BeC294', // Set the token address for the OFT adapter
+            },
         },
         hardhat: {
             // Need this for testing because TestHelperOz5.sol is exceeding the compiled contract size limit
