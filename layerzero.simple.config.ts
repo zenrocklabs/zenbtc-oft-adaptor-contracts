@@ -3,8 +3,8 @@ import { OAppEnforcedOption, OmniPointHardhat } from '@layerzerolabs/toolbox-har
 import { EndpointId } from '@layerzerolabs/lz-definitions'
 import { generateConnectionsConfig } from '@layerzerolabs/metadata-tools'
 
-const holeskyContract: OmniPointHardhat = {
-    eid: EndpointId.HOLESKY_V2_TESTNET,
+const arbSepContract: OmniPointHardhat = {
+    eid: EndpointId.ARBSEP_V2_TESTNET,
     contractName: 'ZenBTCOFTAdapter',
 }
 
@@ -40,7 +40,7 @@ export default async function () {
     // if you declare A,B there's no need to declare B,A
     const connections = await generateConnectionsConfig([
         [
-            holeskyContract, // Chain A contract
+            arbSepContract, // Chain A contract
             baseSepContract, // Chain B contract
             [['LayerZero Labs'], []], // [ requiredDVN[], [ optionalDVN[], threshold ] ]
             [1, 1], // [A to B confirmations, B to A confirmations]
@@ -49,7 +49,7 @@ export default async function () {
     ])
 
     return {
-        contracts: [{ contract: holeskyContract }, { contract: baseSepContract }],
+        contracts: [{ contract: arbSepContract }, { contract: baseSepContract }],
         connections,
     }
 }
