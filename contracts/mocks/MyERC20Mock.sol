@@ -10,9 +10,13 @@ contract MyERC20Mock is ERC20 {
     function mint(address _to, uint256 _amount) public {
         _mint(_to, _amount);
     }
-    
+
     function burnFrom(address account, uint256 value) public {
         _spendAllowance(account, _msgSender(), value);
         _burn(account, value);
+    }
+
+    function decimals() public view override returns(uint8){
+        return 8;
     }
 }
