@@ -33,6 +33,9 @@ importers:
       '@layerzerolabs/lz-v2-utilities':
         specifier: ^3.0.75
         version: 3.0.77
+      '@layerzerolabs/metadata-tools':
+        specifier: ^0.3.2
+        version: 0.3.2(@layerzerolabs/devtools-evm-hardhat@2.0.8(pvbszerijv4roufxfkiy5dkipa))(@layerzerolabs/ua-devtools@3.0.6(dcycahn6bhzbiyw6yr5oepygym))
       '@layerzerolabs/oapp-evm':
         specifier: ^0.3.2
         version: 0.3.2(ejlxaimco3d3ynitlpf6jcga4i)
@@ -507,6 +510,12 @@ packages:
 
   '@layerzerolabs/lz-v2-utilities@3.0.77':
     resolution: {integrity: sha512-QpJtTCXtt40e4z4ICFyVe1QTgmEzgU051loQJTg4MJjCZ9LFQz/trctIn9qpF16WV96mKVDmj5ofvj8VcK8CsQ==}
+
+  '@layerzerolabs/metadata-tools@0.3.2':
+    resolution: {integrity: sha512-lSBHpCTSNuEnSQS/+7uGGyBDNPJH8I2p7Ms0iEl0+Z73OdpVlv4TGKoHbszrJY6q4uEgXH6ez48lpoJdxTiTSw==}
+    peerDependencies:
+      '@layerzerolabs/devtools-evm-hardhat': ~2.0.7
+      '@layerzerolabs/ua-devtools': ~3.0.5
 
   '@layerzerolabs/oapp-evm@0.3.2':
     resolution: {integrity: sha512-QqazLEl9KEPsipU/3m5eFDhyse+sG4bO2FWUEf/Kuee4JW6P3iIBI9wg0QfalUqLj0HL0ChFHL3yRTZVqzxrww==}
@@ -4795,6 +4804,11 @@ snapshots:
       '@ethersproject/solidity': 5.8.0
       bs58: 5.0.0
       tiny-invariant: 1.3.3
+
+  '@layerzerolabs/metadata-tools@0.3.2(@layerzerolabs/devtools-evm-hardhat@2.0.8(pvbszerijv4roufxfkiy5dkipa))(@layerzerolabs/ua-devtools@3.0.6(dcycahn6bhzbiyw6yr5oepygym))':
+    dependencies:
+      '@layerzerolabs/devtools-evm-hardhat': 2.0.8(pvbszerijv4roufxfkiy5dkipa)
+      '@layerzerolabs/ua-devtools': 3.0.6(dcycahn6bhzbiyw6yr5oepygym)
 
   '@layerzerolabs/oapp-evm@0.3.2(ejlxaimco3d3ynitlpf6jcga4i)':
     dependencies:
