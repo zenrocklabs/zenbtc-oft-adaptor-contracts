@@ -17,57 +17,33 @@ import type { OAppOmniGraphHardhat, OmniPointHardhat } from '@layerzerolabs/tool
  *         },
  *     },
  */
-const sepoliaContract: OmniPointHardhat = {
-    eid: EndpointId.SEPOLIA_V2_TESTNET,
-    contractName: 'MyOFTAdapter',
+const holeskyContract: OmniPointHardhat = {
+    eid: EndpointId.HOLESKY_V2_TESTNET,
+    contractName: 'ZenBTCOFTAdapter',
 }
 
-const fujiContract: OmniPointHardhat = {
-    eid: EndpointId.AVALANCHE_V2_TESTNET,
-    contractName: 'MyOFT',
-}
-
-const amoyContract: OmniPointHardhat = {
-    eid: EndpointId.AMOY_V2_TESTNET,
-    contractName: 'MyOFT',
+const baseSepContract: OmniPointHardhat = {
+    eid: EndpointId.BASESEP_V2_TESTNET,
+    contractName: 'ZenBTCOFTAdapter',
 }
 
 const config: OAppOmniGraphHardhat = {
     contracts: [
         {
-            contract: fujiContract,
+            contract: holeskyContract,
         },
         {
-            contract: sepoliaContract,
-        },
-        {
-            contract: amoyContract,
+            contract: baseSepContract,
         },
     ],
     connections: [
         {
-            from: fujiContract,
-            to: sepoliaContract,
+            from: holeskyContract,
+            to: baseSepContract,
         },
         {
-            from: fujiContract,
-            to: amoyContract,
-        },
-        {
-            from: sepoliaContract,
-            to: fujiContract,
-        },
-        {
-            from: sepoliaContract,
-            to: amoyContract,
-        },
-        {
-            from: amoyContract,
-            to: sepoliaContract,
-        },
-        {
-            from: amoyContract,
-            to: fujiContract,
+            from: baseSepContract,
+            to: holeskyContract,
         },
     ],
 }

@@ -55,22 +55,17 @@ const config: HardhatUserConfig = {
         ],
     },
     networks: {
-        'sepolia-testnet': {
-            eid: EndpointId.SEPOLIA_V2_TESTNET,
-            url: process.env.RPC_URL_SEPOLIA || 'https://rpc.sepolia.org/',
+        'holesky-testnet': {
+            eid: EndpointId.HOLESKY_V2_TESTNET,
+            url: process.env.ETHEREUM_HOLESKY_TESTNET_RPC || '',
             accounts,
             oftAdapter: {
-                tokenAddress: '0x0', // Set the token address for the OFT adapter
+                tokenAddress: '0x7692E9a796001FeE9023853f490A692bAB2E4834', // Set the token address for the OFT adapter
             },
         },
-        'avalanche-testnet': {
-            eid: EndpointId.AVALANCHE_V2_TESTNET,
-            url: process.env.RPC_URL_FUJI || 'https://rpc.ankr.com/avalanche_fuji',
-            accounts,
-        },
-        'amoy-testnet': {
-            eid: EndpointId.AMOY_V2_TESTNET,
-            url: process.env.RPC_URL_AMOY || 'https://polygon-amoy-bor-rpc.publicnode.com',
+        'base-testnet': {
+            eid: EndpointId.BASESEP_V2_TESTNET,
+            url: process.env.BASE_SEPOLIA_RPC_KEY || '',
             accounts,
         },
         hardhat: {
