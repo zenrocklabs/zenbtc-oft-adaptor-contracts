@@ -15,6 +15,7 @@ import { EndpointId } from '@layerzerolabs/lz-definitions'
 
 import './type-extensions'
 
+import './tasks/send'
 // Set your preferred authentication method
 //
 // If you prefer using a mnemonic, set a MNEMONIC environment variable
