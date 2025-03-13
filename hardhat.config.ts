@@ -72,7 +72,7 @@ const config: HardhatUserConfig = {
             },
         },
         'arb-testnet': {
-            eid: EndpointId.ARBITRUM_V2_TESTNET,
+            eid: EndpointId.ARBSEP_V2_TESTNET,
             url: process.env.ARBITRUM_SEPOLIA_RPC || '',
             accounts,
             oftAdapter: {
