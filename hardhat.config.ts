@@ -17,6 +17,9 @@ import './type-extensions'
 
 import './tasks/index'
 import './tasks/send'
+
+import '@nomicfoundation/hardhat-verify'
+
 // Set your preferred authentication method
 //
 // If you prefer using a mnemonic, set a MNEMONIC environment variable
@@ -61,23 +64,7 @@ const config: HardhatUserConfig = {
             url: process.env.ETHEREUM_HOLESKY_TESTNET_RPC || '',
             accounts,
             oftAdapter: {
-                tokenAddress: '0x7692E9a796001FeE9023853f490A692bAB2E4834', // Set the token address for the OFT adapter
-            },
-        },
-        'base-testnet': {
-            eid: EndpointId.BASESEP_V2_TESTNET,
-            url: process.env.BASE_SEPOLIA_RPC_KEY || '',
-            accounts,
-            oftAdapter: {
-                tokenAddress: '0xADE6404D6B49439d2F17106093184fC5B4BeC294', // Set the token address for the OFT adapter
-            },
-        },
-        'arb-testnet': {
-            eid: EndpointId.ARBSEP_V2_TESTNET,
-            url: process.env.ARBITRUM_SEPOLIA_RPC || '',
-            accounts,
-            oftAdapter: {
-                tokenAddress: '0xB2869FfE7c6689116b782024FB6eEa4Ea1236768', // Set the token address for the OFT adapter
+                tokenAddress: '0xF59f63cB0d71623c5c59c5aDa1F98eBf4D9D4004', // Set the token address for the OFT adapter
             },
         },
         hardhat: {
@@ -90,6 +77,16 @@ const config: HardhatUserConfig = {
             default: 0, // wallet address of index[0], of the mnemonic in .env
         },
     },
+    etherscan: {
+        apiKey: {
+            holesky: process.env.ETHERSCAN_MAINNET_KEY || "",
+            baseSepolia: process.env.BASE_KEY || "",
+            arbitrumSepolia: process.env.ARBITRUM_KEY || '',
+        },
+    },
+    sourcify:{
+        enabled: true
+    }
 }
 
 export default config

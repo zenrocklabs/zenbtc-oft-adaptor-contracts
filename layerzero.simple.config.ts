@@ -3,13 +3,8 @@ import { OAppEnforcedOption, OmniPointHardhat } from '@layerzerolabs/toolbox-har
 import { EndpointId } from '@layerzerolabs/lz-definitions'
 import { generateConnectionsConfig } from '@layerzerolabs/metadata-tools'
 
-const arbSepContract: OmniPointHardhat = {
-    eid: EndpointId.ARBSEP_V2_TESTNET,
-    contractName: 'ZenBTCOFTAdapter',
-}
-
-const baseSepContract: OmniPointHardhat = {
-    eid: EndpointId.BASESEP_V2_TESTNET,
+const holeskyContract: OmniPointHardhat = {
+    eid: EndpointId.HOLESKY_V2_TESTNET,
     contractName: 'ZenBTCOFTAdapter',
 }
 
@@ -68,22 +63,15 @@ export default async function () {
     // if you declare A,B there's no need to declare B,A
     const connections = await generateConnectionsConfig([
         [
-            arbSepContract, // Chain A contract
-            baseSepContract, // Chain B contract
-            [['LayerZero Labs'], []], // [ requiredDVN[], [ optionalDVN[], threshold ] ]
-            [1, 1], // [A to B confirmations, B to A confirmations]
-            [EVM_ENFORCED_OPTIONS, EVM_ENFORCED_OPTIONS], // Chain B enforcedOptions, Chain A enforcedOptions
-        ],
-        [
             solanaContract, // Chain A contract
-            arbSepContract, // Chain B contract
+            holeskyContract, // Chain B contract
             [['LayerZero Labs'], []], // [ requiredDVN[], [ optionalDVN[], threshold ] ]
             [32, 15], // [A to B confirmations, B to A confirmations]
             [EVM_ENFORCED_OPTIONS, SOLANA_ENFORCED_OPTIONS], // Chain B enforcedOptions, Chain A enforcedOptions
         ],
         [
             solanaContract, // Chain A contract
-            baseSepContract, // Chain B contract
+            holeskyContract, // Chain B contract
             [['LayerZero Labs'], []], // [ requiredDVN[], [ optionalDVN[], threshold ] ]
             [32, 15], // [A to B confirmations, B to A confirmations]
             [EVM_ENFORCED_OPTIONS, SOLANA_ENFORCED_OPTIONS], // Chain B enforcedOptions, Chain A enforcedOptions
@@ -91,7 +79,7 @@ export default async function () {
     ])
 
     return {
-        contracts: [{ contract: arbSepContract }, { contract: baseSepContract }, {contract: solanaContract}],
+        contracts: [{ contract: holeskyContract }, {contract: solanaContract}],
         connections,
     }
 }
