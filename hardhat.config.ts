@@ -15,6 +15,7 @@ import { EndpointId } from '@layerzerolabs/lz-definitions'
 
 import './type-extensions'
 
+import './tasks/index'
 import './tasks/send'
 // Set your preferred authentication method
 //
