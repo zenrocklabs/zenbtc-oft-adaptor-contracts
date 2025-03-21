@@ -10,7 +10,7 @@ const holeskyContract: OmniPointHardhat = {
 
 const solanaContract: OmniPointHardhat = {
     eid: EndpointId.SOLANA_V2_TESTNET,
-    address: 'Ce6T9Jhj1v6pVGQBmkGtHdjURKWfQPxjbWN7vXqKCCwy', // NOTE: update this with the OFTStore address.
+    address: 'Cg2cqCmCYavrfnp8or4pSeWECPXfgCDiqucJoCi7zQPm', // NOTE: update this with the OFTStore address.
 }
 
 const EVM_ENFORCED_OPTIONS: OAppEnforcedOption[] = [
